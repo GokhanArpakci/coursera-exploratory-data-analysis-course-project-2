@@ -11,7 +11,6 @@ library(ggplot2)
 coalMatches  <- grepl("coal", NEISCC$Short.Name, ignore.case=TRUE)
 subsetNEISCC <- NEISCC[coalMatches, ]
 
-head(subsetNEISCC)
 aggregatedTotalByYear4<-aggregate(Emissions ~ year,subsetNEISCC,sum)
 png("plot4.png",width = 640,height=480)
 g2<-ggplot(aggregatedTotalByYear, aes(factor(year), Emissions))
